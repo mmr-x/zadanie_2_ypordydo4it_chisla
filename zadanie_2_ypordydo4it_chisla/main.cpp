@@ -15,7 +15,33 @@ int main( )
     std::cout << "enter three number: ";
     std::cin >> chislo_3;
 
-    std::cout << "one: " << chislo_1 << ", two: " << chislo_2 << ", three: " << chislo_3 << std::endl;
+    int tmp{};
+
+    if ( chislo_1 > chislo_2 )
+    {
+        tmp = chislo_1;
+
+        chislo_1 = chislo_2;
+        chislo_2 = tmp;
+    }
+
+    if ( chislo_1 > chislo_3 ) 
+    {
+        tmp = chislo_1;
+
+        chislo_1 = chislo_3;
+        chislo_3 = tmp;
+    }
+
+    if ( chislo_2 > chislo_3 )
+    {
+        tmp = chislo_2;
+
+        chislo_2 = chislo_3;
+        chislo_3 = tmp;
+    }
+
+    std::cout << chislo_1 << ", " << chislo_2 << ", " << chislo_3 << std::endl;
 
     return 0;
 }
