@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <algorithm>
 
 int main( )
 {
@@ -15,33 +16,16 @@ int main( )
     std::cout << "enter three number: ";
     std::cin >> chislo_3;
 
-    int tmp{};
+    if ( chislo_1 < chislo_2 ) 
+        std::swap( chislo_1, chislo_2 );
 
-    if ( chislo_1 > chislo_2 )
-    {
-        tmp = chislo_1;
+    if ( chislo_1 < chislo_3 )
+        std::swap( chislo_1, chislo_3 );
 
-        chislo_1 = chislo_2;
-        chislo_2 = tmp;
-    }
+    if ( chislo_2 < chislo_3 ) 
+        std::swap( chislo_2, chislo_3 );
 
-    if ( chislo_1 > chislo_3 ) 
-    {
-        tmp = chislo_1;
-
-        chislo_1 = chislo_3;
-        chislo_3 = tmp;
-    }
-
-    if ( chislo_2 > chislo_3 )
-    {
-        tmp = chislo_2;
-
-        chislo_2 = chislo_3;
-        chislo_3 = tmp;
-    }
-
-    std::cout << chislo_1 << ", " << chislo_2 << ", " << chislo_3 << std::endl;
+    std::cout << "one: " << chislo_1 << ", two: " << chislo_2 << ", three: " << chislo_3 << std::endl;
 
     return 0;
 }
